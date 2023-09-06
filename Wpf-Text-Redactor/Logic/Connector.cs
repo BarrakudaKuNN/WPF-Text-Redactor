@@ -11,8 +11,9 @@ namespace Wpf_Text_Redactor.Logic
 {
     internal class Connector
     {
-        string file_Name;
+        string file_Path;
         string file_Text;
+        string file_Name;
 
 
         TextBox textBox;
@@ -24,8 +25,9 @@ namespace Wpf_Text_Redactor.Logic
             this.textBox = textBox;
         }
 
-        public string File_Name { get => file_Name; set => file_Name = value; }
+        public string File_Path { get => file_Path; set => file_Path = value; }
         public string File_Text { get => file_Text; set => file_Text = value; }
+        public string File_Name { get => file_Name; set => file_Name = value; }
 
         public void Text_Open()
         {
@@ -36,8 +38,9 @@ namespace Wpf_Text_Redactor.Logic
             bool result = (bool)file_Dialog.ShowDialog();
             if(result)
             {
-                file_Name = file_Dialog.FileName;
-                file_Text = File.ReadAllText(file_Name);
+                file_Path = file_Dialog.FileName;
+                file_Text = File.ReadAllText(file_Path);
+                File_Name = file_Dialog.SafeFileName;
             }
             textBox.Text = file_Text;
         }
@@ -57,9 +60,9 @@ namespace Wpf_Text_Redactor.Logic
             if (result)
             {
                 // Получение имени файла и сохранение его содержимого
-                file_Name = save_Dialog.FileName;
+                file_Path = save_Dialog.FileName;
                 
-                File.WriteAllText(file_Name, file_Text);
+                File.WriteAllText(file_Path, file_Text);
             }
         }
     }

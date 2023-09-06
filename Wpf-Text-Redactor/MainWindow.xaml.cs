@@ -30,12 +30,29 @@ namespace Wpf_Text_Redactor
 
         private void Button_Open_Click(object sender, RoutedEventArgs e)
         {
-            connector.Text_Open();
+            try
+            {
+                connector.Text_Open();
+                TextBlock_FileName.Text = connector.File_Name;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
+            
         }
 
         private void Button_Save_Click(object sender, RoutedEventArgs e)
         {
-            connector.Text_Save();
+            try
+            {
+                connector.Text_Save();
+                TextBlock_FileName.Text = connector.File_Name;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show(ex.Message);
+            }
         }
     }
 }

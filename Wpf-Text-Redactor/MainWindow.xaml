@@ -5,11 +5,13 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wpf_Text_Redactor"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="ReaderAndChanger" Height="450" Width="800" ResizeMode="NoResize">
     <Grid>
         <Button x:Name="Button_Save" Content="Save as" HorizontalAlignment="Left" Margin="39,75,0,0" VerticalAlignment="Top" Height="34" Width="106" Click="Button_Save_Click"/>
         <Button x:Name="Button_Open" Content="Open" HorizontalAlignment="Left" Margin="39,23,0,0" VerticalAlignment="Top" Height="34" Width="106" Click="Button_Open_Click"/>
-        <TextBox x:Name="TextBox_TextMenu" HorizontalAlignment="Left" Margin="204,23,0,0" TextWrapping="Wrap" Text="TextHere" VerticalAlignment="Top" Width="552" Height="358" AcceptsReturn="True"/>
+        <TextBox x:Name="TextBox_TextMenu" VerticalScrollBarVisibility="Auto" HorizontalScrollBarVisibility="Auto" HorizontalAlignment="Left" Margin="204,23,0,0" TextWrapping="Wrap" Text="TextHere" VerticalAlignment="Top" Width="552" Height="358" AcceptsReturn="True"/>
+        <TextBlock HorizontalAlignment="Left" Margin="204,7,0,0" TextWrapping="Wrap" Text="Название файла: " VerticalAlignment="Top"/>
+        <TextBlock x:Name="TextBlock_FileName" HorizontalAlignment="Left" Margin="300,7,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="75"/>
 
     </Grid>
 </Window>

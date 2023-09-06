@@ -25,7 +25,7 @@ namespace Wpf_Text_Redactor
         public MainWindow()
         {
             InitializeComponent();
-            connector = new Connector();
+            connector = new Connector(TextBox_TextMenu);
         }
 
         private void Button_Open_Click(object sender, RoutedEventArgs e)
@@ -35,7 +35,7 @@ namespace Wpf_Text_Redactor
 
         private void Button_Save_Click(object sender, RoutedEventArgs e)
         {
-
+            connector.Text_Save();
         }
     }
 }
